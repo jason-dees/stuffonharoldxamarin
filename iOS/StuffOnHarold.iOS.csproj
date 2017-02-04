@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Renderers\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -120,8 +121,14 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Renderers\SwipeImageRenderer.cs" />
   </ItemGroup>
-  <Import Project="..\StuffOnHarold\StuffOnHarold.projitems" Label="Shared" Condition="Exists('..\StuffOnHarold\StuffOnHarold.projitems')" />
+  <ItemGroup>
+    <ProjectReference Include="..\StuffOnHarold\StuffOnHarold.csproj">
+      <Project>{55F0969C-5D4E-43D0-BA61-875EEAC70BDB}</Project>
+      <Name>StuffOnHarold</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
 </Project>

@@ -19,8 +19,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\StuffOnHaroldPage.xaml.cs">
       <DependentUpon>StuffOnHaroldPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IGetHaroldPictures.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomRenderers\SwipeImage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Interfaces\" />
+    <Folder Include="$(MSBuildThisFileDirectory)CustomRenderers\" />
   </ItemGroup>
 </Project>

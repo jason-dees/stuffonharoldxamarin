@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using StuffOnHarold.Views;
 using UIKit;
 
 namespace StuffOnHarold.iOS

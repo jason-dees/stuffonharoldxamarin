@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{B6F4F845-9058-4B7F-853E-DD0756E35CAF}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="../stuffonharold/StuffOnHarold/Views/StuffOnHaroldPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="stuffonharoldxamarin Status">
     <Files>
-      <File FileName="../stuffonharold/StuffOnHarold/Views/App.xaml.cs" Line="1" Column="1" />
-      <File FileName="../stuffonharold/StuffOnHarold/Views/StuffOnHaroldPage.xaml.cs" Line="12" Column="1" />
+      <File FileName="StuffOnHarold/CustomRenderers/SwipeImage.cs" Line="14" Column="37" />
+      <File FileName="StuffOnHarold/Views /StuffOnHaroldPage.xaml.cs" Line="30" Column="1" />
+      <File FileName="iOS/Renderers/SwipeImageRenderer.cs" Line="15" Column="32" />
+      <File FileName="stuffonharoldxamarin Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />

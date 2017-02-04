@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace StuffOnHarold
+namespace StuffOnHarold.Views
 {
 	public partial class App : Application
 	{
