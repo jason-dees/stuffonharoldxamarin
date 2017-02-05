@@ -10,28 +10,49 @@ namespace StuffOnHarold.iOS.Renderers {
 	
 	public class SwipeImageRenderer : ImageRenderer {
 
-        UISwipeGestureRecognizer swipeGestureRecognizer;
+        UISwipeGestureRecognizer swipeRightGestureRecognizer;
+		UISwipeGestureRecognizer swipeLeftGestureRecognizer;
+
+		nfloat _startX = 0;
 
 		public SwipeImageRenderer() {
 		}
 
 
-		protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
-		{
+		protected override void OnElementChanged(ElementChangedEventArgs<Image> e) {
 			base.OnElementChanged(e);
 
 
-			if (e.NewElement == null) {
-				this.RemoveGestureRecognizer(swipeGestureRecognizer);
+			if (e.OldElement != null) {
+				this.RemoveGestureRecognizer(swipeRightGestureRecognizer);
+				this.RemoveGestureRecognizer(swipeLeftGestureRecognizer);
 			}
 
-            if (e.OldElement == null) {
+            if (e.NewElement != null) {
+				
 				var swipeImage = e.NewElement as SwipeImage;
 
-				swipeGestureRecognizer = new UISwipeGestureRecognizer(swipeImage.SwipeEventTriggered);
+				swipeRightGestureRecognizer = new UISwipeGestureRecognizer((swipe) => RotateImage(swipe, swipeImage));
+				swipeLeftGestureRecognizer = new UISwipeGestureRecognizer((swipe) => RotateImage(swipe, swipeImage));
+				swipeLeftGestureRecognizer.Direction = UISwipeGestureRecognizerDirection.Left;
 
-				this.AddGestureRecognizer(swipeGestureRecognizer);
+				this.AddGestureRecognizer(swipeRightGestureRecognizer);
+				this.AddGestureRecognizer(swipeLeftGestureRecognizer);
+
 			}
+		}
+
+		private void RotateImage(UISwipeGestureRecognizer swipe, SwipeImage image){
+			var view = swipe.View;
+			nfloat x = 0;
+			if(swipe.Direction == UISwipeGestureRecognizerDirection.Right){
+				x = 100;
+			}
+			else{
+				x = -100;
+			}
+			//image.TranslateTo(x, 0, 1000);
+			image.SwipeEventTriggered(); 
 		}
 	}
 }

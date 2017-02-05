@@ -8,12 +8,14 @@ namespace StuffOnHarold.Views
 		{
 			InitializeComponent();
 
-			MainPage = new StuffOnHaroldPage();
+			MainPage = new NavigationPage(new StuffOnHaroldPage(true));
+
 		}
 
-		protected override void OnStart()
+		protected override async void OnStart()
 		{
 			// Handle when your app starts
+			await MainPage.Navigation.PushAsync(new StuffOnHaroldPage(false));
 		}
 
 		protected override void OnSleep()

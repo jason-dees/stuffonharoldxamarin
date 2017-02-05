@@ -20,19 +20,30 @@ namespace StuffOnHarold.Views {
 			"img/IMG_0251.JPG","img/IMG_0268.JPG"
 		};
 
-		public StuffOnHaroldPage() {
+		private Animation disappearingAnimation;
+
+		public StuffOnHaroldPage(bool isBase = false) {
 			InitializeComponent();
-			HaroldImage.Source = NextImage();
-			HaroldImage.SwipeEvent += HandleSwipeEvent;
+			NavigationPage.SetHasNavigationBar(this, false);
+			if (!isBase)
+			{
+				HaroldImage.Source = NextImage();
+				HaroldImage.SwipeEvent += HandleSwipeEvent;
+			}
 		}
 
+
 		private string NextImage(){
-			var index = (new Random()).Next(_haroldImageSources.Count) - 1;
+			var index = (new Random()).Next(_haroldImageSources.Count - 1);
 			return $"http://stuffonharold.jhdees.com/{_haroldImageSources[index]}";
 		}
 
-		private void HandleSwipeEvent(object sender, EventArgs e){
+		private async void HandleSwipeEvent(object sender, EventArgs e)
+		{
 			HaroldImage.Source = NextImage();
+			var nextPage = new StuffOnHaroldPage();
+			Navigation.InsertPageBefore(nextPage, this);
+			await Navigation.PopAsync();
 		}
 	}
 }

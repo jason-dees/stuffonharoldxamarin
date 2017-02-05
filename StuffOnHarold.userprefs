@@ -1,15 +1,40 @@
 ﻿<Properties StartupConfiguration="{B6F4F845-9058-4B7F-853E-DD0756E35CAF}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="stuffonharoldxamarin Status">
     <Files>
-      <File FileName="StuffOnHarold/CustomRenderers/SwipeImage.cs" Line="14" Column="37" />
-      <File FileName="StuffOnHarold/Views /StuffOnHaroldPage.xaml.cs" Line="30" Column="1" />
-      <File FileName="iOS/Renderers/SwipeImageRenderer.cs" Line="15" Column="32" />
+      <File FileName="StuffOnHarold/Views /StuffOnHaroldPage.xaml.cs" Line="30" Column="38" />
+      <File FileName="iOS/Renderers/SwipeImageRenderer.cs" Line="54" Column="6" />
+      <File FileName="StuffOnHarold/Views /App.xaml.cs" Line="17" Column="34" />
+      <File FileName="iOS/Main.cs" Line="18" Column="4" />
       <File FileName="stuffonharoldxamarin Status" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="StuffOnHarold" expanded="True">
+            <Node name="StuffOnHarold" expanded="True">
+              <Node name="CustomRenderers" expanded="True" />
+              <Node name="Interfaces" expanded="True" />
+              <Node name="Views " expanded="True">
+                <Node name="App.xaml" expanded="True" />
+                <Node name="StuffOnHaroldPage.xaml" expanded="True">
+                  <Node name="StuffOnHaroldPage.xaml.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="StuffOnHarold.iOS" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="Renderers" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/jasondees/Projects/stuffonharoldxamarin/StuffOnHarold/Views /HaroldView.xaml.cs" relfile="StuffOnHarold/Views /HaroldView.xaml.cs" line="20" column="24" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
