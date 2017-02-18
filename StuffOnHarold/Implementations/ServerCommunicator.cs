@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Xamarin.Forms;
+using StuffOnHarold.Implementations;
 
+[assembly: Dependency(typeof(ServerCommunicator))]
 namespace StuffOnHarold.Implementations {
 	public class ServerCommunicator : ITalkToServers {
 
@@ -13,7 +16,7 @@ namespace StuffOnHarold.Implementations {
 
 		public ServerCommunicator() {
 			_client = new HttpClient();
-			_baseAddress = "http://stuffonharold.jhdees.local/";
+			_baseAddress = "http://stuffonharold.jhdees.com/";
 			_client.BaseAddress = new Uri(_baseAddress);
 		}
 
@@ -22,8 +25,11 @@ namespace StuffOnHarold.Implementations {
 		}
 
 		public async Task<List<string>> GetImageList() {
-			var imageList = await _client.GetStringAsync("images.php");
-			return JsonConvert.DeserializeObject<List<string>>(imageList);
+			var imageListResponse = await _client.GetAsync("images.php");
+			if(!imageListResponse.IsSuccessStatusCode){
+				throw new Exception("Server Not Working");
+			}
+			return JsonConvert.DeserializeObject<List<string>>(await imageListResponse.Content.ReadAsStringAsync());
 		}
 
 	}

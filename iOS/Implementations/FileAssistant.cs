@@ -1,7 +1,10 @@
 ﻿using System;
 using System.IO;
 using StuffOnHarold.Interfaces;
+using StuffOnHarold.iOS.Implementations;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(FileAssistant))]
 namespace StuffOnHarold.iOS.Implementations {
 	public class FileAssistant : IHelpWithFiles {
 		string _documentsPath = "";

@@ -1,21 +1,26 @@
-﻿using Xamarin.Forms;
+﻿using StuffOnHarold.ViewModels;
+using Xamarin.Forms;
 
 namespace StuffOnHarold.Views
 {
 	public partial class App : Application
 	{
+		private readonly BasePage _basePage;
+
 		public App()
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new StuffOnHaroldPage(true));
+			_basePage = new BasePage();
+
+			MainPage = new NavigationPage(_basePage);
 
 		}
 
-		protected override async void OnStart()
+		protected override void OnStart()
 		{
 			// Handle when your app starts
-			await MainPage.Navigation.PushAsync(new StuffOnHaroldPage(false));
+
 		}
 
 		protected override void OnSleep()
