@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using StuffOnHarold.CustomRenderers;
+using StuffOnHarold.Implementations;
 using Xamarin.Forms;
 
 namespace StuffOnHarold.Views {
@@ -20,18 +22,14 @@ namespace StuffOnHarold.Views {
 			"img/IMG_0251.JPG","img/IMG_0268.JPG"
 		};
 
-		private Animation disappearingAnimation;
-
 		public StuffOnHaroldPage(bool isBase = false) {
 			InitializeComponent();
 			NavigationPage.SetHasNavigationBar(this, false);
-			if (!isBase)
-			{
+			if(!isBase){
 				HaroldImage.Source = NextImage();
 				HaroldImage.SwipeEvent += HandleSwipeEvent;
 			}
 		}
-
 
 		private string NextImage(){
 			var index = (new Random()).Next(_haroldImageSources.Count - 1);

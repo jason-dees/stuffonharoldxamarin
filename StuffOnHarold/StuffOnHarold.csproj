@@ -30,13 +30,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CustomRenderers\SwipeImage.cs" />
-    <Compile Include="Interfaces\IGetHaroldPictures.cs" />
+    <Compile Include="Interfaces\ITalkToServers.cs" />
     <Compile Include="Views \App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views \StuffOnHaroldPage.xaml.cs">
       <DependentUpon>StuffOnHaroldPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Implementations\ServerCommunicator.cs" />
+    <Compile Include="Interfaces\IHelpWithFiles.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -48,6 +50,9 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.3.3.180\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -56,6 +61,7 @@
     <Folder Include="CustomRenderers\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Views \" />
+    <Folder Include="Implementations\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views \App.xaml" />
