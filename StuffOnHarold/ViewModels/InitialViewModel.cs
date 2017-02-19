@@ -15,8 +15,6 @@ namespace StuffOnHarold.ViewModels {
 
 		public Command FillInHaroldListCommand { get; }
 
-		public Command LoadInitialPageCommand { get; }
-
 		public InitialViewModel() {
 			_serverTalker = DependencyService.Get<ITalkToServers>();
 
@@ -24,9 +22,9 @@ namespace StuffOnHarold.ViewModels {
 		}
 
 
-		private async Task FillInHaroldList(){
+		async Task FillInHaroldList(){
 			_haroldImagesList = await _serverTalker.GetImageList();
-			await Application.Current.MainPage.Navigation.PushAsync(new StuffOnHaroldPage(HaroldImageList));
+			await Application.Current.MainPage.Navigation.PushAsync(new ImagePage(HaroldImageList));
 		}
 
 	}

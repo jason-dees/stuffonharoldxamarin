@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	xmlns:local="clr-namespace:StuffOnHarold" x:Class="StuffOnHarold.Views.StuffOnHaroldPage"
+	xmlns:local="clr-namespace:StuffOnHarold" x:Class="StuffOnHarold.Views.ImagePage"
 	xmlns:renderer="clr-namespace:StuffOnHarold.CustomRenderers;Assembly=StuffOnHarold">
 
 	<renderer:SwipeImage

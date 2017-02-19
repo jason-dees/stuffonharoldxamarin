@@ -29,8 +29,12 @@ namespace StuffOnHarold.iOS.Implementations {
 			File.WriteAllBytes(GetFullPath(fileName), data);
 		}
 
-		string GetFullPath(string fileName){
+		public string GetFullPath(string fileName){
 			return Path.Combine(_documentsPath, fileName);
+		}
+
+		public Stream GetFileStream(string fileName) {
+			return File.OpenRead(GetFullPath(fileName));
 		}
 	}
 }

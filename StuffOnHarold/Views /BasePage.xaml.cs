@@ -1,24 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using StuffOnHarold.ViewModels;
+﻿using StuffOnHarold.ViewModels;
 using Xamarin.Forms;
 
-namespace StuffOnHarold.Views
-{
-	public partial class BasePage : ContentPage
-	{
+namespace StuffOnHarold.Views {
+	
+	public partial class BasePage : ContentPage {
+		
 		private readonly InitialViewModel _initialViewModel;
-		public BasePage()
-		{
+
+		public BasePage() {
 			InitializeComponent();
+
 			_initialViewModel = new InitialViewModel();
 
-			BindingContext = _initialViewModel;
-
+			NavigationPage.SetHasNavigationBar(this, false);
 		}
 
 		protected override void OnAppearing(){
 			base.OnAppearing();
+
 			_initialViewModel.FillInHaroldListCommand.Execute(null);
 		}
 	}
