@@ -8,10 +8,13 @@ namespace StuffOnHarold.CustomRenderers {
 		public delegate void SwipeEventHandler(object sender, EventArgs args);
 		public event EventHandler SwipeEvent = delegate { };
 
+		public bool IsRightSwipe { get; set; }
+
 		public SwipeImage() {
 		}
 
-		public void SwipeEventTriggered(){
+		public void SwipeEventTriggered(bool isRightSwipe){
+			IsRightSwipe = isRightSwipe;
 			SwipeEvent(this, null);
 		}
 	}

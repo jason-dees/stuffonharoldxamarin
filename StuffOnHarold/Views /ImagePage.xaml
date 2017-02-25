@@ -3,10 +3,28 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	xmlns:local="clr-namespace:StuffOnHarold" x:Class="StuffOnHarold.Views.ImagePage"
 	xmlns:renderer="clr-namespace:StuffOnHarold.CustomRenderers;Assembly=StuffOnHarold">
-
-	<renderer:SwipeImage
-		x:Name="HaroldImage" 
-		Aspect="AspectFill"
-		/>
-	
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Image
+			x:Name="NextHaroldImage" 
+			Aspect="AspectFill"
+			Grid.Row="0"
+			Grid.Column="0"
+			Grid.ColumnSpan="2"
+			/>
+		<renderer:SwipeImage
+			x:Name="HaroldImage" 
+			Aspect="AspectFill"
+			Grid.Row="0"
+			Grid.Column="0"
+			Grid.ColumnSpan="2"
+			/>
+	</Grid>
 </ContentPage>

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using StuffOnHarold.CustomRenderers;
 using StuffOnHarold.Interfaces;
 using Xamarin.Forms;
 
@@ -17,17 +20,41 @@ namespace StuffOnHarold.Views {
 			NavigationPage.SetHasNavigationBar(this, false);
 			_haroldImageSources = haroldImages;
 
-			HaroldImage.SwipeEvent += HandleSwipeEvent;
-
 			_fileHelper = DependencyService.Get<IHelpWithFiles>();
-			var src = NextImage().Result;
-			HaroldImage.Source = src;
+
 		}
 
-		private async System.Threading.Tasks.Task<ImageSource> NextImage() {
+		protected override void OnAppearing(){
+			(Content as Grid).RowDefinitions.First().Height = new GridLength(this.Content.Height * .9);
+		}
 
-			var index = (new Random()).Next(_haroldImageSources.Count - 1);
-			var fileName = _haroldImageSources[index];
+		public async Task SetNextImage(ImageSource next = null){
+			await SetUpImage(next);
+		}
+
+		async Task SetUpImage(ImageSource next) {
+			HaroldImage.Source = next ?? await NextImage();
+
+			HaroldImage.TranslationX = 0;
+			HaroldImage.TranslationY = 0;
+
+			HaroldImage.SwipeEvent += HandleSwipeEvent;
+
+			while (((NextHaroldImage.Source = await NextImage()) as FileImageSource).File == (HaroldImage.Source as FileImageSource).File){
+			}
+		}
+
+		private string _nextFileName {
+			get {
+				var index = (new Random()).Next(_haroldImageSources.Count - 1);
+
+				return _haroldImageSources[index];
+			}
+		}
+
+
+		private async Task<ImageSource> NextImage() {
+			var fileName = _nextFileName;
 
 			var unslashedName = new List<string>(fileName.Split('/')).FindLast(o => o is string);
 
@@ -40,12 +67,19 @@ namespace StuffOnHarold.Views {
 			return ImageSource.FromFile(_fileHelper.GetFullPath(unslashedName));
 		}
 
+
 		private async void HandleSwipeEvent(object sender, EventArgs e) {
 			var nextPage = new ImagePage(_haroldImageSources);
 
+			await nextPage.SetNextImage(NextHaroldImage.Source);
+
 			Navigation.InsertPageBefore(nextPage, this);
 
-			await Navigation.PopAsync();
+			var direction = HaroldImage.IsRightSwipe ? 1 : -1;
+
+			await HaroldImage.TranslateTo(Width * direction, Height * .05, 500, Easing.CubicOut);
+
+			await Navigation.PopAsync(false);
 		}
 	}
 }

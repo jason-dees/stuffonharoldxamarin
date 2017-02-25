@@ -24,7 +24,10 @@ namespace StuffOnHarold.ViewModels {
 
 		async Task FillInHaroldList(){
 			_haroldImagesList = await _serverTalker.GetImageList();
-			await Application.Current.MainPage.Navigation.PushAsync(new ImagePage(HaroldImageList));
+			var firstHarold = new ImagePage(HaroldImageList);
+			await firstHarold.SetNextImage();
+
+			await Application.Current.MainPage.Navigation.PushAsync(firstHarold);
 		}
 
 	}

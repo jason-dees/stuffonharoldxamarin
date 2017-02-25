@@ -13,8 +13,6 @@ namespace StuffOnHarold.iOS.Renderers {
         UISwipeGestureRecognizer swipeRightGestureRecognizer;
 		UISwipeGestureRecognizer swipeLeftGestureRecognizer;
 
-		nfloat _startX = 0;
-
 		public SwipeImageRenderer() {
 		}
 
@@ -52,7 +50,7 @@ namespace StuffOnHarold.iOS.Renderers {
 				x = -100;
 			}
 			//image.TranslateTo(x, 0, 1000);
-			image.SwipeEventTriggered(); 
+			image.SwipeEventTriggered(x > 0); 
 		}
 	}
 }
