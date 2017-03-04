@@ -25,7 +25,7 @@ namespace StuffOnHarold.Views {
 		}
 
 		protected override void OnAppearing(){
-			(Content as Grid).RowDefinitions.First().Height = new GridLength(this.Content.Height * .9);
+			(Content as Grid).RowDefinitions.First().Height = new GridLength(this.Content.Height * 1);
 		}
 
 		public async Task SetNextImage(ImageSource next = null){
@@ -76,8 +76,10 @@ namespace StuffOnHarold.Views {
 			Navigation.InsertPageBefore(nextPage, this);
 
 			var direction = HaroldImage.IsRightSwipe ? 1 : -1;
-
-			await HaroldImage.TranslateTo(Width * direction, Height * .05, 500, Easing.CubicOut);
+			await Task.WhenAll(
+				HaroldImage.RotateTo(15 * direction, 100, Easing.Linear),
+				HaroldImage.TranslateTo(Width * direction*1.1, Height * .1, 300, Easing.Linear)
+			);
 
 			await Navigation.PopAsync(false);
 		}
