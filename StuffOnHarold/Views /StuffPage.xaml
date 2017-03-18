@@ -7,10 +7,19 @@
 	
 	<ContentPage.Content>
 		<ListView 
-			ItemsSource="{Binding StuffList}">
+			ItemsSource="{Binding StuffGroups}"
+			GroupDisplayBinding="{Binding Title}"
+			IsGroupingEnabled="true">
 			<ListView.ItemTemplate>
-		      <DataTemplate>
-		        <TextCell Text="{Binding Name}" Detail="{Binding Weight}"/>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Horizontal">
+							<Label Text="{Binding Name}" HorizontalOptions="FillAndExpand"/>
+							<Label Text="{Binding Weight}" 
+								HorizontalTextAlignment="End" 
+								BackgroundColor="Gray" />
+						</StackLayout>
+					</ViewCell>
 		      </DataTemplate>
 		    </ListView.ItemTemplate>
 		</ListView>

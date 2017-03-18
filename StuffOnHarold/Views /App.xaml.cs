@@ -4,15 +4,12 @@ namespace StuffOnHarold.Views
 {
 	public partial class App : Application
 	{
-		//private readonly BasePage _basePage;
 
 		public App()
 		{
 			InitializeComponent();
 
-			//_basePage = new BasePage();
-
-			MainPage = new NavigationPage(new StuffPage());
+			MainPage = new NavigationPage(new BasePage());
 
 		}
 
