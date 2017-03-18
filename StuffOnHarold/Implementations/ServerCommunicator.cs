@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 using StuffOnHarold.Implementations;
+using StuffOnHarold.Models;
 
 [assembly: Dependency(typeof(ServerCommunicator))]
 namespace StuffOnHarold.Implementations {
@@ -32,5 +33,11 @@ namespace StuffOnHarold.Implementations {
 			return JsonConvert.DeserializeObject<List<string>>(await imageListResponse.Content.ReadAsStringAsync());
 		}
 
+		public async Task<List<StuffStruct>> GetStuffList() {
+			var stuffListResponse = await _client.GetAsync("stuff.json");
+
+			return JsonConvert.DeserializeObject<List<StuffStruct>>(await stuffListResponse.Content.ReadAsStringAsync());
+			
+		}
 	}
 }
