@@ -24,7 +24,10 @@
 			Aspect="AspectFill"
 			Grid.Row="0"
 			Grid.Column="0"
-			Grid.ColumnSpan="2"
-			/>
+			Grid.ColumnSpan="2">
+				<renderer:SwipeImage.GestureRecognizers>
+					<TapGestureRecognizer Tapped="ShowStats"/>
+				</renderer:SwipeImage.GestureRecognizers>
+		</renderer:SwipeImage>
 	</Grid>
 </ContentPage>

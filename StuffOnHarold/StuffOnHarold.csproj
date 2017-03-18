@@ -46,7 +46,7 @@
     <Compile Include="Views \StuffPage.xaml.cs">
       <DependentUpon>StuffPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\StuffStruct.cs" />
+    <Compile Include="Models\Stuff.cs" />
     <Compile Include="ViewModels\StuffViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

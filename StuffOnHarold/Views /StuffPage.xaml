@@ -6,6 +6,7 @@
 	Title="Stuff">
 	
 	<ContentPage.Content>
+		<StackLayout>
 		<ListView 
 			ItemsSource="{Binding StuffGroups}"
 			GroupDisplayBinding="{Binding Title}"
@@ -13,15 +14,29 @@
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<ViewCell>
-						<StackLayout Orientation="Horizontal">
-							<Label Text="{Binding Name}" HorizontalOptions="FillAndExpand"/>
-							<Label Text="{Binding Weight}" 
-								HorizontalTextAlignment="End" 
-								BackgroundColor="Gray" />
-						</StackLayout>
-					</ViewCell>
+						<Grid Padding="20">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="20" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+							    <ColumnDefinition Width="2*" />
+							    <ColumnDefinition Width="*" />
+						  	</Grid.ColumnDefinitions>
+							<Label Text="{Binding Name}" 
+								HorizontalOptions="FillAndExpand" 
+								HorizontalTextAlignment="Start" 
+								Grid.Row="0"
+								Grid.Column="0" FontAttributes="Bold" />
+							<Label Text="{Binding Grams}" 
+								HorizontalTextAlignment="End"
+								Grid.Row="0"
+								Grid.Column="1"/>
+						</Grid>
+						</ViewCell>
 		      </DataTemplate>
 		    </ListView.ItemTemplate>
 		</ListView>
+		<Button Text="Interesting" Clicked="DismissPage"/>
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

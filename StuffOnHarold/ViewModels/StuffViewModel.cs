@@ -13,7 +13,7 @@ namespace StuffOnHarold.ViewModels {
 
 		readonly ITalkToServers _serverTalker;
 
-		List<StuffStruct> _stuffList;
+		List<Stuff> _stuffList;
 
 		List<StuffGroup> _stuffGroups;
 
@@ -38,11 +38,11 @@ namespace StuffOnHarold.ViewModels {
 			_stuffList = (await _serverTalker.GetStuffList()).OrderBy(s => s.Name.ToUpper()).ToList();
 
 			var firstGroup = new StuffGroup("Overview") {
-				new StuffStruct{
+				new Stuff{
 					Name = "Harold's Weight",
 					Weight = HaroldsWeight
 				},
-				new StuffStruct{
+				new Stuff{
 					Name = "Stuff's Total Weight",
 					Weight = _stuffList.Sum((arg) => arg.Weight)
 				}
@@ -59,10 +59,10 @@ namespace StuffOnHarold.ViewModels {
 		}
 	}
 
-	public class StuffGroup : List<StuffStruct>{
+	public class StuffGroup : List<Stuff>{
 		public string Title { get; set; }
 
-		public StuffGroup(string title, List<StuffStruct> stuff) : base(stuff) {
+		public StuffGroup(string title, List<Stuff> stuff) : base(stuff) {
 			Title = title;
 		}
 		public StuffGroup(string title){

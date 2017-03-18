@@ -1,4 +1,5 @@
-﻿using StuffOnHarold.ViewModels;
+﻿using System;
+using StuffOnHarold.ViewModels;
 using Xamarin.Forms;
 
 namespace StuffOnHarold.Views {
@@ -20,9 +21,8 @@ namespace StuffOnHarold.Views {
 			_stuffViewModel.FillInStuffListCommand.Execute(null);
 		}
 
-		public void SetUpGrid(){
-
-
+		public async void DismissPage(object sender, EventArgs args){
+			await Navigation.PopModalAsync(true);
 		}
 	}
 }

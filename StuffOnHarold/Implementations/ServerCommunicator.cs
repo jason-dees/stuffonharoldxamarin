@@ -1,4 +1,4 @@
-﻿using StuffOnHarold.Interfaces;
+using StuffOnHarold.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -33,10 +33,10 @@ namespace StuffOnHarold.Implementations {
 			return JsonConvert.DeserializeObject<List<string>>(await imageListResponse.Content.ReadAsStringAsync());
 		}
 
-		public async Task<List<StuffStruct>> GetStuffList() {
+		public async Task<List<Stuff>> GetStuffList() {
 			var stuffListResponse = await _client.GetAsync("stuff.json");
 
-			return JsonConvert.DeserializeObject<List<StuffStruct>>(await stuffListResponse.Content.ReadAsStringAsync());
+			return JsonConvert.DeserializeObject<List<Stuff>>(await stuffListResponse.Content.ReadAsStringAsync());
 			
 		}
 	}

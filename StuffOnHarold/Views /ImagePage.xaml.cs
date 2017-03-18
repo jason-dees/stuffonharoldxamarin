@@ -32,12 +32,15 @@ namespace StuffOnHarold.Views {
 			await SetUpImage(next);
 		}
 
+		public async void ShowStats(object sender, EventArgs args){
+			await Navigation.PushModalAsync(new StuffPage());
+		}
+
 		async Task SetUpImage(ImageSource next) {
 			HaroldImage.Source = next ?? await NextImage();
 
 			HaroldImage.TranslationX = 0;
 			HaroldImage.TranslationY = 0;
-
 			HaroldImage.SwipeEvent += HandleSwipeEvent;
 
 			while (((NextHaroldImage.Source = await NextImage()) as FileImageSource).File == (HaroldImage.Source as FileImageSource).File){
