@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{B6F4F845-9058-4B7F-853E-DD0756E35CAF}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="stuffonharoldxamarin Status">
     <Files>
-      <File FileName="StuffOnHarold/Views /HaroldImagePage.xaml" Line="11" Column="34" />
-      <File FileName="StuffOnHarold/Views /HaroldImagePage.xaml.cs" Line="56" Column="35" />
+      <File FileName="StuffOnHarold/Views /HaroldImagePage.xaml.cs" Line="64" Column="38" />
       <File FileName="StuffOnHarold/ViewModels/InitialViewModel.cs" Line="28" Column="34" />
       <File FileName="StuffOnHarold/CustomRenderers/SwipeImage.cs" Line="19" Column="1" />
-      <File FileName="iOS/AppDelegate.cs" Line="15" Column="4" />
       <File FileName="stuffonharoldxamarin Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
@@ -15,5 +13,5 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.StuffOnHarold.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D89A3D19-2231-449E-B79D-4434C2DA09B5" />
+  <MonoDevelop.Ide.ItemProperties.StuffOnHarold.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.28B65807-F0E1-4F1D-B8A1-0C271E81742C" />
 </Properties>
