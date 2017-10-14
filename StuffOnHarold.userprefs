@@ -1,11 +1,32 @@
 ﻿<Properties StartupConfiguration="{B6F4F845-9058-4B7F-853E-DD0756E35CAF}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="stuffonharoldxamarin Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StuffOnHarold/Views /HaroldImagePage.xaml.cs">
     <Files>
-      <File FileName="StuffOnHarold/Views /HaroldImagePage.xaml.cs" Line="64" Column="38" />
+      <File FileName="StuffOnHarold/Views /HaroldImagePage.xaml.cs" Line="74" Column="4" />
       <File FileName="StuffOnHarold/ViewModels/InitialViewModel.cs" Line="28" Column="34" />
       <File FileName="StuffOnHarold/CustomRenderers/SwipeImage.cs" Line="19" Column="1" />
-      <File FileName="stuffonharoldxamarin Status" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="StuffOnHarold" expanded="True">
+            <Node name="StuffOnHarold" expanded="True">
+              <Node name="Views " expanded="True">
+                <Node name="HaroldImagePage.xaml.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="StuffOnHarold.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="StuffOnHarold" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -13,5 +34,5 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.StuffOnHarold.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.28B65807-F0E1-4F1D-B8A1-0C271E81742C" />
+  <MonoDevelop.Ide.ItemProperties.StuffOnHarold.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.83FDAD2C-906A-4F9A-BFF9-5A1F3A8C0D8D" />
 </Properties>

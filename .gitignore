@@ -3,3 +3,11 @@ obj/
 \.DS_Store
 
 *.dll
+
+StuffOnHarold\.userprefs
+
+packages/
+
+iOS/bin/
+
+StuffOnHarold/bin/
